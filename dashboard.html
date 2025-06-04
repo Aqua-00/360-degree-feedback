@@ -6,6 +6,7 @@
   <title>360 Feedback System</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
+    
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -116,6 +117,21 @@
     .star-rating .star.selected {
       color: #ffc107;
     }
+    .logout-btn {
+  margin-left: 15px;
+  background: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 6px rgba(244,67,54,0.08);
+}
+.logout-btn:hover {
+  background: #d32f2f;
+}
   </style>
 </head>
 <body>
@@ -125,7 +141,9 @@
       <!-- <img src="https://via.placeholder.com/30" alt="Profile" />
       <span>John Doe</span> -->
       👤 Profile
+      
     </div>
+    <button id="logoutBtn" class="logout-btn" title="Logout">⎋ Logout</button>
   </header>
   <nav>
     <a href="#dashboard">Dashboard</a>
@@ -290,7 +308,10 @@
       });
   }
 
-
+document.getElementById("logoutBtn").addEventListener("click", function() {
+  // Optionally clear session/localStorage here
+  window.location.href = "index.html";
+});
 
   </script>
 </body>

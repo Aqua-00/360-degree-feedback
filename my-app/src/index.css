@@ -1,0 +1,53 @@
+:root {
+  --bg-color: #f0f2f5;
+  --header-bg: #3f51b5;
+  --header-color: #fff;
+  --section-bg: #fff;
+  --text-color: #222;
+  --button-bg: #3f51b5;
+  --button-color: #fff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.dark-theme {
+  --bg-color: #181a1b;
+  --header-bg: #23272f;
+  --header-color: #fff;
+  --section-bg: #23272f;
+  --text-color: #f0f2f5;
+  --button-bg: #444b5a;
+  --button-color: #fff;
+}
+header {
+  background-color: var(--header-bg);
+  color: var(--header-color);
+}
+
+section {
+  background: var(--section-bg);
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-color);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

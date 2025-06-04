@@ -11,44 +11,45 @@
         <div class="form-container">
             <h1 id="formTitle">Welcome Back</h1>
             
-            <form id="loginForm">
-                <div class="input-group">
-                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/mail.svg" alt="Email icon" class="icon">
-                    <input type="email" placeholder="Email Address" required>
-                </div>
-                
-                <div class="input-group">
-                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/lock.svg" alt="Password icon" class="icon">
-                    <input type="password" placeholder="Password" required>
-                </div>
+            <!-- ...existing code... -->
+<form id="loginForm">
+    <div class="input-group">
+        <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/mail.svg" alt="Email icon" class="icon">
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+    </div>
+    <div class="input-group">
+        <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/lock.svg" alt="Password icon" class="icon">
+        <input type="password" id="password" name="password" placeholder="Password" required>
+    </div>
+    <button type="submit" id="submit-btn" class="submit-btn">
+        Sign In
+        <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/arrow-right.svg" alt="Arrow right" class="icon">
+    </button>
+</form>
 
-                <button type="submit" class="submit-btn">
-                    Sign In
-                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/arrow-right.svg" alt="Arrow right" class="icon">
-                </button>
-            </form>
+<form id="registerForm" class="hidden">
+    <div class="input-group">
+        <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/user.svg" alt="User icon" class="icon">
+        <input type="text" name="fullname" placeholder="Full Name" required>
+    </div>
+    <div class="input-group">
+        <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/mail.svg" alt="Email icon" class="icon">
+        <input type="email"  name="email" placeholder="Email Address" required>
+    </div>
+    <div class="input-group">
+        <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/lock.svg" alt="Password icon" class="icon">
+        <input type="password"  name="password" placeholder="Password" required>
+    </div>
+    <button type="submit"  class="submit-btn">
+        Create Account
+        <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/arrow-right.svg" alt="Arrow right" class="icon">
+    </button>
+</form>
+<div id="message" style="color:red; margin-top:10px;"></div>
 
-            <form id="registerForm" class="hidden">
-                <div class="input-group">
-                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/user.svg" alt="User icon" class="icon">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-
-                <div class="input-group">
-                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/mail.svg" alt="Email icon" class="icon">
-                    <input type="email" placeholder="Email Address" required>
-                </div>
-                
-                <div class="input-group">
-                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/lock.svg" alt="Password icon" class="icon">
-                    <input type="password" placeholder="Password" required>
-                </div>
-
-                <button type="submit" class="submit-btn">
-                    Create Account
-                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@0.344.0/icons/arrow-right.svg" alt="Arrow right" class="icon">
-                </button>
-            </form>
+       
+      
+   
             
             <div class="toggle-form">
                 <button onclick="toggleForm()" class="toggle-btn">
@@ -57,26 +58,24 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function toggleForm() {
-            const loginForm = document.getElementById('loginForm');
-            const registerForm = document.getElementById('registerForm');
-            const formTitle = document.getElementById('formTitle');
-            const toggleBtn = document.querySelector('.toggle-btn');
-
-            if (loginForm.classList.contains('hidden')) {
-                loginForm.classList.remove('hidden');
-                registerForm.classList.add('hidden');
-                formTitle.textContent = 'Welcome Back';
-                toggleBtn.textContent = "Don't have an account? Sign Up";
-            } else {
-                loginForm.classList.add('hidden');
-                registerForm.classList.remove('hidden');
-                formTitle.textContent = 'Create Account';
-                toggleBtn.textContent = 'Already have an account? Sign In';
-            }
-        }
-    </script>
+<!-- Firebase App (the core Firebase SDK) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<!-- Firebase Authentication -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<!-- Your Firebase config goes here -->
+<script>
+ const firebaseConfig = {
+  apiKey: "AIzaSyBmHIVZwqJ0OO7TIaDti-7kHU8N2y53U2E",
+  authDomain: "hackfest-25-c87c5.firebaseapp.com",
+  projectId: "hackfest-25-c87c5",
+  storageBucket: "hackfest-25-c87c5.firebasestorage.app",
+  messagingSenderId: "756483378931",
+  appId: "1:756483378931:web:16484536878f8d17e43186"
+};
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="login.js"></script>
+<script src="register.js"></script>
+   
 </body>
 </html>
